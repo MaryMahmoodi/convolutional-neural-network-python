@@ -16,6 +16,7 @@ def LoadMnistData(imagefile, labelfile):
     images = gzip.open(imagefile, 'rb')
     labels = gzip.open(labelfile, 'rb')
 
+
     # Read the binary data
     # We have to get big endian unsigned int. So we need '>I'
 
@@ -33,8 +34,10 @@ def LoadMnistData(imagefile, labelfile):
     N = labels.read(4)
     N = unpack('>I', N)[0]
 
+
     if number_of_images != N:
         raise Exception('number of labels did not match the number of images')
+
 
     # Get the data
     x = zeros((N, rows, cols), dtype=float32)  # Initialize numpy array
@@ -42,6 +45,7 @@ def LoadMnistData(imagefile, labelfile):
     for i in range(N):
         if i % 1000 == 0:
             print("i: %i" % i)
+
             
         for row in range(rows):
             for col in range(cols):
