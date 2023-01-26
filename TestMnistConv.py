@@ -9,7 +9,7 @@ from MnistConv import *
 
 
 # Learn
-#
+
 Images, Labels = LoadMnistData('MNIST\\t10k-images-idx3-ubyte.gz', 'MNIST\\t10k-labels-idx1-ubyte.gz')
 Images = np.divide(Images, 255)
 
